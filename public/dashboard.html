@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Placement Prep Tracker - Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<h1>Placement Prep Tracker</h1>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="dashboard-header">
+    <h2 id="welcomeText"></h2>
+    <!-- 🔔 TASK REMINDERS -->
+<div id="reminderBox" class="reminder-box"></div>
+
+
+    <div class="header-actions">
+      <button id="goToLearning" class="secondary-btn"> Learning</button>
+      <button id="themeToggle" class="theme-toggle"> Dark Mode</button>
+      <button id="logoutBtn" class="logout">Logout</button>
+    </div>
+  </div>
+
+  <!-- Progress -->
+  <p id="progressText"></p>
+  <div class="progress-container">
+    <div id="progressBar"></div>
+  </div>
+
+  <!-- Filters -->
+  <div class="filters">
+    <button id="allFilter">All</button>
+    <button id="completedFilter">Completed</button>
+    <button id="pendingFilter">Not Completed</button>
+  </div>
+
+  <!-- Task Input -->
+  <div class="tracker">
+    <input type="text" id="taskInput" placeholder="Enter a task">
+    <input type="date" id="dueDateInput">
+
+    <select id="categorySelect">
+      <option value="">Select Category</option>
+      <option value="DSA">DSA</option>
+      <option value="OS">OS</option>
+      <option value="DBMS">DBMS</option>
+      <option value="CN">CN</option>
+      <option value="Projects">Projects</option>
+      <option value="Aptitude">Aptitude</option>
+    </select>
+
+    <button id="addBtn">Add Task</button>
+    <ul id="taskList"></ul>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

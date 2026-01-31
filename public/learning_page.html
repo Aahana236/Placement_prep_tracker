@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Placement Learning Portal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<h1> Placement Learning Portal</h1>
+
+<!-- 📊 PLACEMENT READINESS SCORE CARD -->
+<div class="score-card" id="scoreCard">
+  <h3> Placement Readiness Score</h3>
+  <p class="score-value" id="readinessScore">0 / 100</p>
+  <small>Click to view report</small>
+</div>
+
+<!-- 🤖 AI STUDY RECOMMENDATION -->
+<div class="ai-card" id="aiCard">
+  <h3> AI Study Recommendation</h3>
+  <p id="aiSuggestion">
+    Start learning to get personalized recommendations.
+  </p>
+</div>
+
+
+<!-- 🔥 STREAK CARD -->
+<div class="streak-card">
+  <div class="streak-item">
+    <span class="streak-icon">🔥</span>
+    <div>
+      <p class="streak-label">Current Streak</p>
+      <p class="streak-value" id="currentStreak">0 days</p>
+    </div>
+  </div>
+
+  <div class="streak-divider"></div>
+
+  <div class="streak-item">
+    <span class="streak-icon">🏆</span>
+    <div>
+      <p class="streak-label">Best Streak</p>
+      <p class="streak-value" id="bestStreak">0 days</p>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+
+  <button onclick="window.location.href='dashboard.html'" class="secondary-btn">
+    ⬅ Back to Dashboard
+  </button>
+
+  <h3 style="margin-top: 30px;"> Learning Activity</h3>
+  <div id="heatmap" class="heatmap"></div>
+
+  <!-- LEARNING SECTIONS -->
+
+  <!-- DSA -->
+  <div class="learning-section">
+    <button class="dropdown-btn"> Data Structures & Algorithms</button>
+    <div class="dropdown-content">
+      <ul>
+        <li><label><input type="checkbox" class="topic-checkbox"> Arrays</label></li>
+        <li><label><input type="checkbox" class="topic-checkbox"> Linked List</label></li>
+        <li><label><input type="checkbox" class="topic-checkbox"> Stacks & Queues</label></li>
+        <li><label><input type="checkbox" class="topic-checkbox"> Trees</label></li>
+        <li><label><input type="checkbox" class="topic-checkbox"> Graphs</label></li>
+        <li><label><input type="checkbox" class="topic-checkbox"> Dynamic Programming</label></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- OS -->
+  <div class="learning-section">
+    <button class="dropdown-btn"> Operating Systems</button>
+    <div class="dropdown-content">
+      <ul>
+        <li><label><input type="checkbox" class="topic-checkbox"> Processes & Threads</label></li>
+        <li><label><input type="checkbox" class="topic-checkbox"> CPU Scheduling</label></li>
+        <li><label><input type="checkbox" class="topic-checkbox"> Deadlocks</label></li>
+        <li><label><input type="checkbox" class="topic-checkbox"> Memory Management</label></li>
+        <li><label><input type="checkbox" class="topic-checkbox"> File Systems</label></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DBMS -->
+  <div class="learning-section">
+    <button class="dropdown-btn"> DBMS</button>
+    <div class="dropdown-content">
+      <ul>
+        <li><label><input type="checkbox" class="topic-checkbox"> ER Model</label></li>
+        <li><label><input type="checkbox" class="topic-checkbox"> Normalization</label></li>
+        <li><label><input type="checkbox" class="topic-checkbox"> SQL Queries</label></li>
+        <li><label><input type="checkbox" class="topic-checkbox"> Transactions</label></li>
+        <li><label><input type="checkbox" class="topic-checkbox"> Indexing</label></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CN -->
+  <div class="learning-section">
+    <button class="dropdown-btn"> Computer Networks</button>
+    <div class="dropdown-content">
+      <ul>
+        <li><label><input type="checkbox" class="topic-checkbox"> OSI Model</label></li>
+        <li><label><input type="checkbox" class="topic-checkbox"> TCP/IP</label></li>
+        <li><label><input type="checkbox" class="topic-checkbox"> Routing Algorithms</label></li>
+        <li><label><input type="checkbox" class="topic-checkbox"> Congestion Control</label></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Projects -->
+  <div class="learning-section">
+    <button class="dropdown-btn"> Projects</button>
+    <div class="dropdown-content">
+      <ul>
+        <li><label><input type="checkbox" class="topic-checkbox"> Resume Projects</label></li>
+        <li><label><input type="checkbox" class="topic-checkbox"> System Design Basics</label></li>
+        <li><label><input type="checkbox" class="topic-checkbox"> Git & GitHub</label></li>
+        <li><label><input type="checkbox" class="topic-checkbox"> Deployment</label></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Aptitude -->
+  <div class="learning-section">
+    <button class="dropdown-btn"> Aptitude</button>
+    <div class="dropdown-content">
+      <ul>
+        <li><label><input type="checkbox" class="topic-checkbox"> Quantitative Aptitude</label></li>
+        <li><label><input type="checkbox" class="topic-checkbox"> Logical Reasoning</label></li>
+        <li><label><input type="checkbox" class="topic-checkbox"> Verbal Ability</label></li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<!-- 📊 SCORE REPORT MODAL (INSIDE BODY ✅) -->
+<div class="modal" id="scoreModal">
+  <div class="modal-content">
+    <span class="close-btn" id="closeModal">&times;</span>
+    <h2> Placement Readiness Report</h2>
+    <div class="modal-score" id="modalScore">0 / 100</div>
+    <p class="modal-status" id="modalStatus">Getting Started</p>
+    <hr />
+    <div class="score-breakdown">
+      <p> DSA: <span id="dsaScore">0%</span></p>
+      <p> OS: <span id="osScore">0%</span></p>
+      <p> DBMS: <span id="dbmsScore">0%</span></p>
+      <p> CN: <span id="cnScore">0%</span></p>
+      <p> Projects: <span id="projectScore">0%</span></p>
+      <p> Aptitude: <span id="aptitudeScore">0%</span></p>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
+
+
+
